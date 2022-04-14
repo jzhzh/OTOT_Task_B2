@@ -13,5 +13,5 @@ marvel.png is the screenshot of the graph visualization.
 radar.py is the code to preprocess the data for the statistical visualization.
 
 ## Text visualization
-textrank.py is the code for extracting a keyword from a line.
+textrank.py is the code for extracting a keyword from a line.  
 test_textrank.py is the code for testing textrank algorithm. (i.e. main function)
