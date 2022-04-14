@@ -4,27 +4,16 @@ import pytextrank
 import random
 
 def get_textrank(sentence, nlp):
-    # nlp = spacy.load('en_core_web_sm')
-
-    # nlp.add_pipe("textrank")
-
-    # df = pd.read_csv('lyrics_data.csv', names=['name', 'lyrics'])
-
-    # if __name__ == "__main__":
-    #     df_extracted = pd.DataFrame(columns=['name', 'lyrics'])
-    #     df_extracted['name'] = df['name']
-    #     for index, row in df.iterrows():
-    #         doc = nlp(row['lyrics'])
-    #         temp = []
-    #         i = 1
-    #         for phrase in doc._.phrases:
-    #             temp.append(phrase.text)
-    #             if i >= 5:
-    #                 df_extracted.iloc[index]["lyrics"] = temp
-    #                 print(df_extracted.iloc[index]["lyrics"])
-    #                 break
-    #             i += 1
-    #     df_extracted.to_csv('keywords.csv', index=False)
+    """
+    1. Use the TextRank algorithm to extract keywords from the sentence.
+    2. If the number of keywords is greater than 0, then randomly select a keyword from the list of
+    keywords.
+    3. If the number of keywords is 0, then randomly select a word from the sentence
+    
+    :param sentence: the sentence you want to extract keywords from
+    :param nlp: the spacy model
+    :return: A list of keywords.
+    """
 
     doc = nlp(sentence)
     pos_list = {}

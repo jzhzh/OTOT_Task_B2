@@ -11,9 +11,10 @@ df_edges = pd.read_csv("./graph_dataset/edges.csv")
 
 labels={}
 
-
+# Creating a graph from the dataframe.
 G = nx.from_pandas_edgelist(df_edges, 'source', 'target', create_using=nx.Graph())
 
+# Creating a dictionary of labels for the nodes.
 for node in G.nodes():
     if G.degree[node] > 7:
         print(node)
@@ -21,10 +22,14 @@ for node in G.nodes():
     else:
         labels[node]=''
 
+# A layout algorithm that positions the nodes in a graph.
 pos = nx.spring_layout(G)
+
+# Creating a color map for the nodes.
 cmap = matplotlib.colors.ListedColormap(['tab:blue', 'darkorange', 'lightgreen'])
 # plt.figure(figsize=(8,8))
 
+# Draw graph
 nx.draw(G, pos=pos, with_labels=False, node_color=df_nodes['group'], node_size=df_nodes['size']*13, edge_color='gray', width=1.0, cmap=cmap)
 nx.draw_networkx_labels(G, pos, labels, font_size=10)
 
