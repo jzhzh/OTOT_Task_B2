@@ -1,5 +1,21 @@
 # OTOT_Task_B2
 
+
+## Setup Environment
+1. Install `Anaconda`.
+2. Install `python3.9` environment.
+3. Install packages
+    ```
+    pip install networkx
+    pip install pandas
+    pip install matplotlib
+    conda install spacy
+    pip install pytextrank
+    ```
+4. Install the corpus
+    ```
+    python -m spacy download en_core_web_sm
+    ```
 ## Graph visualization
 If you cannot see this screenshot clearly, please click on it or download it.
 ![avatar](/marvel.png)
