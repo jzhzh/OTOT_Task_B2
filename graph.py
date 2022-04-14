@@ -6,13 +6,17 @@ import matplotlib
 
 df_nodes = pd.read_csv("./graph_dataset/nodes.csv")
 df_edges = pd.read_csv("./graph_dataset/edges.csv")
+# df = pd.merge(df_nodes,df_edges,on='source').reset_index(drop=True)
 
 # print(df_nodes, df_edges)
 
 labels={}
+# color_map = []
 
 # Creating a graph from the dataframe.
 G = nx.from_pandas_edgelist(df_edges, 'source', 'target', create_using=nx.Graph())
+df_nodes = df_nodes.set_index('id')
+df_nodes = df_nodes.reindex(G.nodes())
 
 # Creating a dictionary of labels for the nodes.
 for node in G.nodes():
